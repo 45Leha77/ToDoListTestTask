@@ -1,0 +1,20 @@
+<main class="task-card">
+  <div class="task-card__container" *ngIf="task">
+    <fa-icon
+      class="task-card__delete-icon"
+      [icon]="faClose"
+      (click)="onDelete(task.id)"
+    ></fa-icon>
+    <h2 class="task-card__number">№{{ task.id }}</h2>
+    <p class="task-card__user-number">
+      <strong>User:</strong> {{ task.userId }}
+    </p>
+    <p class="task-card__title"><strong>Title:</strong> {{ task.title }}</p>
+    <p class="task-card__status">
+      <strong>Status:</strong>
+      <span [style.color]="task.completed ? 'green' : 'red'">{{
+        task.completed ? "Completed" : "Incompleted"
+      }}</span>
+    </p>
+  </div>
+</main>

@@ -1,0 +1,86 @@
+@import "../../../variables.scss";
+
+.tasks-list-page {
+  width: 100%;
+  min-height: fit-content;
+  background-color: $blocksColor;
+  box-shadow: $blocksShadow;
+  margin-top: 10px;
+  // .tasks-list-page__container
+
+  &__container {
+    padding: $containerPadding;
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: $desktop) {
+      padding: 1% 20px;
+    }
+    @media (max-width: $tablet) {
+      padding: 1% 10px;
+    }
+  }
+}
+.tasks-list {
+  width: 60%;
+  height: 77vh;
+  border-right: 1px solid rgba(27, 25, 25, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+.task {
+  min-width: fit-content;
+  margin: 5px;
+  background-color: rgb(52, 50, 50);
+  color: whitesmoke;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+  }
+  // .task__container
+
+  &__container {
+    padding: 1% 5%;
+    @media (max-width: $phone) {
+      padding: 1% 2%;
+    }
+  }
+
+  // .task__body
+
+  &__body {
+    display: flex;
+    gap: 50px;
+    @media (max-width: $minPhone) {
+      gap: 15px;
+    }
+  }
+
+  // .task__number
+
+  &__number {
+    font-weight: bold;
+    @media (max-width: $phone) {
+      font-size: 14px;
+    }
+  }
+
+  // .task__text
+
+  &__text {
+    font-size: 18px;
+    @media (max-width: $phone) {
+      font-size: 14px;
+    }
+  }
+}
+.task-card {
+  width: 40%;
+  height: 100%;
+}

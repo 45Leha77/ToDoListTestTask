@@ -1,0 +1,109 @@
+@import "../../../variables.scss";
+
+.add-task {
+  // .add-task__container
+
+  &__container {
+    padding: 1% 5%;
+    @media (max-width: $phone) {
+      padding: 1% 2%;
+    }
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(52, 50, 50);
+  padding: 5%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  position: relative;
+  @media (max-width: $phone) {
+    gap: 5px;
+    padding: 3%;
+  }
+  &__close-icon {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    @media (max-width: $phone) {
+      padding: 5px 10px;
+      font-size: 20px;
+    }
+    @media (max-width: $minPhone) {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    font-size: 30px;
+    font-weight: bold;
+    @media (max-width: $tablet) {
+      font-size: 25px;
+    }
+    @media (max-width: $phone) {
+      font-size: 20px;
+    }
+    @media (max-width: $minPhone) {
+      font-size: 13px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    text-align: center;
+    @media (max-width: $tablet) {
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+    @media (max-width: $phone) {
+      flex-wrap: wrap;
+      max-width: 80%;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @media (max-width: $minPhone) {
+      font-size: 14px;
+    }
+  }
+
+  // .form__label
+
+  &__label {
+    font-size: 20px;
+    @media (max-width: $phone) {
+      font-size: 15px;
+    }
+    @media (max-width: $minPhone) {
+      font-size: 12px;
+    }
+  }
+
+  // .form__input
+
+  &__input {
+    font-size: 25px;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+    }
+    @media (max-width: $phone) {
+      font-size: 15px;
+    }
+    @media (max-width: $minPhone) {
+      font-size: 12px;
+    }
+  }
+}

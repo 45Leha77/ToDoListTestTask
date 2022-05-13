@@ -1,0 +1,18 @@
+<div class="tasks-info">
+  <div class="tasks-info__container">
+    <ul class="tasks-info__items items-tasks-info">
+      <li class="items-tasks-info__item">
+        Completed tasks: <strong>{{ tasksInfo.completed }}</strong>
+      </li>
+      <li class="items-tasks-info__item">
+        Incompleted tasks: <strong>{{ tasksInfo.incompleted }}</strong>
+      </li>
+      <li class="items-tasks-info__item">
+        Total number of tasks: <strong>{{ tasksInfo.total }}</strong>
+      </li>
+    </ul>
+    <button class="tasks-info__button" type="button" [routerLink]="['/add']">
+      Add
+    </button>
+  </div>
+</div>

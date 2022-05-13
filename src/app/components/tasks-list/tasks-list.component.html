@@ -1,0 +1,24 @@
+<main class="tasks-list-page">
+  <div class="tasks-list-page__container">
+    <div
+      class="tasks-list-page__tasks-list tasks-list"
+      *ngIf="tasks$ | async as loadedTasks"
+    >
+      <div
+        class="tasks-list__task task"
+        *ngFor="let task of loadedTasks"
+        [routerLink]="['card', task.id]"
+      >
+        <div class="task__container">
+          <div class="task__body">
+            <div class="task__number">{{ task.id }}</div>
+            <div class="task__text">{{ task.title }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tasks-list__task-card task-card">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

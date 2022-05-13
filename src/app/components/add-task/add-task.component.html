@@ -1,0 +1,53 @@
+<main class="add-task">
+  <div class="add-task__container">
+    <form
+      class="add-task__form form"
+      (ngSubmit)="onFormSubmit()"
+      [formGroup]="addForm"
+    >
+      <fa-icon
+        class="form__close-icon"
+        [icon]="faClose"
+        [routerLink]="['/']"
+      ></fa-icon>
+      <h1 class="form__title">Adding new task</h1>
+      <mat-form-field
+        MatFormFieldAppearance="fill"
+        color="warn"
+        hintLabel="Min value is 1"
+      >
+        <mat-label class="form__label">User Id</mat-label>
+        <input
+          autocomplete="off"
+          type="number"
+          matInput
+          class="form__input"
+          formControlName="userId"
+        />
+      </mat-form-field>
+      <mat-form-field
+        MatFormFieldAppearance="fill"
+        color="warn"
+        hintLabel="Min 4 characters"
+      >
+        <mat-label class="form__label">Title</mat-label>
+        <textarea
+          matInput
+          class="form__input"
+          formControlName="title"
+          #title
+        ></textarea>
+        <mat-hint align="end">{{ title.value?.length || 0 }}/4</mat-hint>
+      </mat-form-field>
+      <button
+        type="submit"
+        mat-raised-button
+        color="warn"
+        class="form__button"
+        [disabled]="!addForm.valid"
+      >
+        Create
+      </button>
+    </form>
+  </div>
+</main>
