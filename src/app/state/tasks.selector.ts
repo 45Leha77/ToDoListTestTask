@@ -13,7 +13,7 @@ export const getTaskById = createSelector(
   getTasksState,
   (state: any, props: any) => {
     return state.tasks.find(
-      (task: Task) => JSON.parse(task.id) === JSON.parse(props.id)
+      (task: Task) => task.id === props.id
     );
   }
 );

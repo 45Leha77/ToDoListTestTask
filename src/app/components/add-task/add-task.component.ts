@@ -13,7 +13,7 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 export class AddTaskComponent implements OnInit {
   addForm!: FormGroup;
   faClose = faClose;
-  constructor(private store: Store, private router: Router) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
@@ -29,8 +29,11 @@ export class AddTaskComponent implements OnInit {
     if (!this.addForm.valid) {
       return;
     }
-    const task = this.addForm.value;
-    this.store.dispatch(addTask(task));
-    this.router.navigate(['/']);
+    const task = {
+      title: this.addForm.value.title,
+      userId: this.addForm.value.userId,
+      completed: false
+    }
+    this.store.dispatch(addTask({ task }));
   }
 }

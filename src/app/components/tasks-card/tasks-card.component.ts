@@ -17,11 +17,7 @@ export class TasksCardComponent implements OnInit {
   task!: Task;
   taskSubscription$!: Subscription;
   faClose = faClose;
-  constructor(
-    private route: ActivatedRoute,
-    private store: Store<AppState>,
-    private router: Router
-  ) {}
+  constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -39,8 +35,7 @@ export class TasksCardComponent implements OnInit {
     }
   }
 
-  onDelete(id: string) {
+  onDelete(id: any) {
     this.store.dispatch(deleteTask({ id }));
-    this.router.navigate(['/']);
   }
 }
